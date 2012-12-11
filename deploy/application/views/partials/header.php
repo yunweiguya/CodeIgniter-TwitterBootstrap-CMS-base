@@ -4,8 +4,11 @@
 	<meta charset="utf-8">
 		
 	<title><?php echo $title ?></title>
-	
-    <link rel="stylesheet" href="/_includes/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="/_includes/css/bootstrap.min.css" />
+	<?php $layout = $this->input->get('layout', TRUE); ?>
+  <?php if($layout == 'responsive') : ?>
+    <link rel="stylesheet" href="/_includes/css/bootstrap-responsive.min.css" /> 
+  <?php endif;?>
     <link rel="stylesheet" href="/_includes/css/style.css" />
     
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -21,11 +24,16 @@
 
 <body id="<?php echo isset($bodyID) ? $bodyID : ''; ?>">
   <div class="container">
-    <div class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse" style="position: static;">
         <div class="navbar-inner">
           <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
             <a class="brand" href="#"><?php echo $title ?></a>
-            <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
+            <div class="nav-collapse collapse navbar-inverse-collapse">
               <?php if($loggedIn){ ?>
               <ul class="nav">
                <li class="<?php echo ($bodyID == 'home-index') ? 'active' : ''; ?>"><a href="/">Home</a></li>

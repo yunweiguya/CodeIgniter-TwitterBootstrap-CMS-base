@@ -21,6 +21,8 @@ Password: password
 Links/Documentation
 -------------------
 
+- You cab switch on the responsive layout by adding the following query string to your url ?layout=responsive 
+
 - Codeigniter:
   * [http://codeigniter.com/](http://codeigniter.com/)
   * [Codeigniter Docs](http://codeigniter.com/user_guide/)
